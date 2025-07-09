@@ -50,8 +50,8 @@ table thead tr th:last-child {
 th, td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ccc; 
-    border-right: 1px solid #ccc;  
+    border-bottom: 1px solid #ccc; /* línea horizontal */
+    border-right: 1px solid #ccc;  /* línea vertical */
 }
 
 th:last-child, td:last-child {

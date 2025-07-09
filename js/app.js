@@ -1,13 +1,9 @@
-// URL base de la API
 const API_URL = "http://localhost:8080/api/articulos";
 
-// Cuando se carga la página, mostramos el listado
 document.addEventListener("DOMContentLoaded", listarArticulos);
 
-// Manejador del formulario
 document.getElementById("form-articulo").addEventListener("submit", guardarArticulo);
 
-// Botón para cancelar edición
 document.getElementById("cancelar").addEventListener("click", () => {
     document.getElementById("form-articulo").reset();
     document.getElementById("idArticulo").value = "";
@@ -37,7 +33,6 @@ function listarArticulos() {
         .catch(error => console.error("Error al listar artículos:", error));
 }
 
-// === Guardar o actualizar un artículo ===
 function guardarArticulo(event) {
     event.preventDefault();
 
@@ -72,7 +67,6 @@ function guardarArticulo(event) {
     .catch(error => console.error("Error al guardar artículo:", error));
 }
 
-// === Cargar artículo en el formulario para edición ===
 function editarArticulo(id) {
     fetch(`${API_URL}/${id}`)
         .then(response => response.json())
@@ -83,8 +77,6 @@ function editarArticulo(id) {
         })
         .catch(error => console.error("Error al obtener artículo:", error));
 }
-
-// === Eliminar un artículo ===
 function eliminarArticulo(id) {
     if (confirm("¿Deseás eliminar este artículo?")) {
         fetch(`${API_URL}/${id}`, {
